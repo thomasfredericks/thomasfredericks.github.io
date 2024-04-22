@@ -7,28 +7,51 @@
 
 <title>t-o-f.info</title>
 
-<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 
 <script src="randomColor.js"></script>
+<script src="fitty.min.js"></script>
 
 <style>
+   
+
+html { 
+  background: url(bg5.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
 body {
-    font-family: 'Roboto', sans-serif;
+  /*font-family: "Azeret Mono", monospace;*/
+  /*font-optical-sizing: auto;*/
+  /*font-weight: 800;*/
+  font-family: "Arial",sans-serif;
+  font-weight: 600;
+
     font-size: 18px; 
     margin: 0;
     padding: 0;
-    display: flex;
+
+    color: #fcff28;
+    /*color: #2f3bf7; blue*/
+    /*color: #02ff01; VERT FLUO*/
+    /*color: #ff7a18; NICE ORANBGE*/
+    /*orange quebec solidaire : ff5607*/
+/*color: #fcff28; NICE YELLOW*/
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
 }
 
 .centered-div {
+    width: 80%;
     text-align: center;
-    padding: 20px;
+    padding: 5%;
     border: 0px solid #000;
     border-radius: 0px;
-    /*background-color: #f9f9f9;*/
+    
 }
 
 .align-left {
@@ -37,31 +60,45 @@ body {
 
 /* unvisited link */
 a:link {
-    color: #000000;
+    color: #ffffff;
 }
 
 /* visited link */
 a:visited {
-    color: #000000;
+    color: #ffffff;
 }
 
 /* mouse over link */
 a:hover {
-    color: #000000;
+    color: #ffffff;
 }
 
 /* selected link */
 a:active {
-    color: #000000;
+    color: #ffffff;
+}
+
+.column-all-top {
+    text-align: left;
+    width: 90%;
 }
 
 
-.colum-left {
+.column-all {
     text-align: right;
+    width: 90%;
+}
+
+
+
+.colum-center {
+    text-align: right;
+    width: 45%;
 }
 
 .colum-right {
     text-align: left;
+    width: 45%;
 }
 
  th, td {
@@ -76,53 +113,23 @@ a:active {
  <body >
  <div class="centered-div">
 
-    <div style="font-size: 24px; ">
-    THOMAS O. FREDERICKS
-    </div>
+    <span style="font-size: 72px;color: #ffffff;">THOMAS O.</span>
+    <span style="font-size: 72px;color: #ffffff;">FREDERICKS</span>
+    <span style="font-size: 18px;">PORTFOLIO ART : <a href="portfolio.pdf" target="_blank">pdf</a></span>
+    <span style="font-size: 18px;">CODE : <a href="https://github.com/thomasfredericks" target="_blank">github</a></span>
+    <span style="font-size: 18px;">CIRCUITS : <a href="https://tofstuff.com" target="_blank">tofstuff.com</a></span>
+    <span style="font-size: 18px;">PROF. : <a href="https://tim-montmorency.com/" target="_blank">tim collège montmorency</a></span>
+    <span style="font-size: 18px;">DESIGN : <a href="design.pdf" target="_blank">pdf</a></span>
+    <span style="font-size: 18px;">CV : <a href="cv.pdf" target="_blank">pdf</a></span>
+    <span style="font-size: 18px;">CONTACT : <a href="mailto:tof@t-o-f.info">tof@t-o-f.info</a> </span>
 
-
-     <table>
-        <tbody>
-
-
-            <tr>
-                <td class="colum-left">portfolio art</td>
-                <td> : </td>
-                <td class="colum-right"><a href="https://tof.t-o-f.info" target="_blank">tof.t-o-f.info</a></td>
-            </tr>
-             <tr>
-                <td class="colum-left">code</td>
-                <td> : </td>
-                <td class="colum-right"><a href="https://github.com/thomasfredericks" target="_blank">github</a></td>
-            </tr>
-             <tr>
-                <td class="colum-left">circuits</td>
-                <td> : </td>
-                <td class="colum-right"><a href="https://tofstuff.com" target="_blank">tofstuff.com</a></td>
-            </tr>
-                        <tr>
-                <td class="colum-left">prof.</td>
-                <td> : </td>
-                <td class="colum-right"> <a href="https://tim-montmorency.com/" target="_blank">tim collège montmorency</a>  </td>
-            </tr>
-            <tr>
-                <td class="colum-left">cv</td>
-                <td> : </td>
-                <td class="colum-right"><a href="cv.pdf">pdf</a></td>
-            </tr>
-                        <tr>
-                <td class="colum-left">contact</td>
-                <td> : </td>
-                <td class="colum-right"> <a href="mailto:tof@t-o-f.info">tof@t-o-f.info</a> </td>
-            </tr>
-        </tbody>
-    </table>
-   
-
-
+    
 </div>
 
 <script type="text/javascript">
+    //fitty.observeWindow = true;
+    //fitty.observeWindowDelay = 100;
+   fitty('span');
     /*
   var color = randomColor({luminosity: 'dark', count: 1});
   //var container = document.getElementById('wikibody');
