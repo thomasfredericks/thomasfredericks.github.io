@@ -15,7 +15,7 @@
    
 
 html { 
-  background: url(bg5.jpg) no-repeat center center fixed; 
+ 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -42,63 +42,35 @@ body {
 /*color: #fcff28; NICE YELLOW*/
     justify-content: center;
     align-items: center;
-
+    transition: background-color 3s;
 }
 
-.centered-div {
+
+
+.content {
     width: 80%;
     text-align: center;
     padding: 5%;
     border: 0px solid #000;
     border-radius: 0px;
-    
+    transition: color 2s;
 }
 
 .align-left {
     text-align: left;
 }
 
-/* unvisited link */
-a:link {
-    color: #ffffff;
+a {
+    transition: color 1.5s;
 }
 
-/* visited link */
-a:visited {
-    color: #ffffff;
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-/* mouse over link */
 a:hover {
-    color: #ffffff;
-}
-
-/* selected link */
-a:active {
-    color: #ffffff;
-}
-
-.column-all-top {
-    text-align: left;
-    width: 90%;
-}
-
-
-.column-all {
-    text-align: right;
-    width: 90%;
-}
-
-
-
-.colum-center {
-    text-align: right;
-    width: 45%;
-}
-
-.colum-right {
-    text-align: left;
-    width: 45%;
+  animation: blink 0.3s steps(2, start) infinite;
 }
 
  th, td {
@@ -111,15 +83,14 @@ a:active {
  </head>
 
  <body >
- <div class="centered-div">
+ <div class="content">
 
     <span style="font-size: 72px;color: #ffffff;">THOMAS O.</span>
     <span style="font-size: 72px;color: #ffffff;">FREDERICKS</span>
-    <span style="font-size: 18px;">PORTFOLIO ART : <a href="portfolio.pdf" target="_blank">pdf</a></span>
-    <span style="font-size: 18px;">CODE : <a href="https://github.com/thomasfredericks" target="_blank">github</a></span>
-    <span style="font-size: 18px;">CIRCUITS : <a href="https://tofstuff.com" target="_blank">tofstuff.com</a></span>
+    <span style="font-size: 18px;">PORTFOLIO : <a href="portfolio.pdf" target="_blank">pdf</a></span>
+    <span style="font-size: 18px;">CODE : <a href="https://github.com/thomasfredericks" target="_blank">github</a> <a href="https://codeberg.org/thomasofredericks" target="_blank">codeberg</a></span>
+    <span style="font-size: 18px;">STUFF : <a href="https://tofstuff.com" target="_blank">tofstuff.com</a></span>
     <span style="font-size: 18px;">PROF. : <a href="https://tim-montmorency.com/" target="_blank">tim collège montmorency</a></span>
-    <span style="font-size: 18px;">DESIGN : <a href="design.pdf" target="_blank">pdf</a></span>
     <span style="font-size: 18px;">CV : <a href="cv.pdf" target="_blank">pdf</a></span>
     <span style="font-size: 18px;">CONTACT : <a href="mailto:tof@t-o-f.info">tof@t-o-f.info</a> </span>
 
@@ -144,6 +115,41 @@ a:active {
    document.body.style.backgroundColor = randomColor({luminosity: 'light', count: 1});
    */
 </script>
+
+<script>
+     function getRandomColor() {
+      const h = Math.floor(Math.random() * 360);
+      const s = Math.floor(Math.random() * 30) + 70;
+      const l = Math.floor(Math.random() * 20) + 40;
+      return `hsl(${h}, ${s}%, ${l}%)`;
+    }
+
+    function getRandomDelay(min = 2000, max = 8000) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    function animateBackground() {
+      document.body.style.backgroundColor = getRandomColor();
+      setTimeout(animateBackground, getRandomDelay(4000, 10000));
+    }
+
+    function animateText() {
+      document.querySelector('.content').style.color = getRandomColor();
+      setTimeout(animateText, getRandomDelay(3000, 8000));
+    }
+
+    function animateLinks() {
+      document.querySelectorAll('a').forEach(link => {
+        link.style.color = getRandomColor();
+      });
+      setTimeout(animateLinks, getRandomDelay(2000, 6000));
+    }
+
+    // Kick off the animations
+    animateBackground();
+    animateText();
+    animateLinks();
+  </script>
 
  </body>
 </html>
