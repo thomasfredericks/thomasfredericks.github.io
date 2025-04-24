@@ -2,106 +2,112 @@
 
 <head>
 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>t-o-f.info</title>
-<link rel="icon" type="image/x-icon" href="favicon.png">
+  <title>t-o-f.info</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
 
-<script src="fitty.min.js"></script>
+  <script src="fitty.min.js"></script>
 
-<style>
-   
+  <style>
+    html {
 
-html { 
- 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-
-body {
-  /*font-family: "Azeret Mono", monospace;*/
-  /*font-optical-sizing: auto;*/
-  /*font-weight: 800;*/
-  font-family: "Arial",sans-serif;
-  font-weight: 600;
-
-    font-size: 18px; 
-    margin: 0;
-    padding: 0;
-
-    color: #fcff28;
-    /*color: #2f3bf7; blue*/
-    /*color: #02ff01; VERT FLUO*/
-    /*color: #ff7a18; NICE ORANBGE*/
-    /*orange quebec solidaire : ff5607*/
-/*color: #fcff28; NICE YELLOW*/
-    justify-content: center;
-    align-items: center;
-    transition: background-color 3s;
-}
-
-
-
-.content {
-    width: 80%;
-    text-align: center;
-    padding: 5%;
-    border: 0px solid #000;
-    border-radius: 0px;
-    transition: color 2s;
-}
-
-.align-left {
-    text-align: left;
-}
-
-a {
-    transition: color 1.5s;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-a:hover {
-  animation: blink 0.3s steps(2, start) infinite;
-  
-}
-
- th, td {
-        border: 0px solid #fff;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
     }
 
 
- </style>
+    body {
+      /*font-family: "Azeret Mono", monospace;*/
+      /*font-optical-sizing: auto;*/
+      /*font-weight: 800;*/
+      font-family: "Arial", sans-serif;
+      font-weight: 600;
 
- </head>
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
 
- <body >
- <div class="content">
+      color: #fcff28;
+      /*color: #2f3bf7; blue*/
+      /*color: #02ff01; VERT FLUO*/
+      /*color: #ff7a18; NICE ORANBGE*/
+      /*orange quebec solidaire : ff5607*/
+      /*color: #fcff28; NICE YELLOW*/
+      justify-content: center;
+      align-items: center;
+      transition: background-color 4s;
+    }
+
+
+
+    .content {
+      width: 80%;
+      text-align: center;
+      padding: 5%;
+      border: 0px solid #000;
+      border-radius: 0px;
+      transition: color 5s;
+    }
+
+    .align-left {
+      text-align: left;
+    }
+
+    a {
+      transition: color 1.5s;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    a:hover {
+      animation: blink 0.3s steps(2, start) infinite;
+
+    }
+
+    th,
+    td {
+      border: 0px solid #fff;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="content">
 
     <span style="font-size: 72px;color: #ffffff;">THOMAS O.</span>
     <span style="font-size: 72px;color: #ffffff;">FREDERICKS</span>
     <span style="font-size: 18px;">PORTFOLIO : <a href="portfolio.pdf" target="_blank">pdf</a></span>
-    <span style="font-size: 18px;">CODE : <a href="https://github.com/thomasfredericks" target="_blank">github</a> <a href="https://codeberg.org/thomasofredericks" target="_blank">codeberg</a></span>
+    <span style="font-size: 18px;">CODE : <a href="https://github.com/thomasfredericks" target="_blank">github</a> <a
+        href="https://codeberg.org/thomasofredericks" target="_blank">codeberg</a></span>
     <span style="font-size: 18px;">STUFF : <a href="https://tofstuff.com" target="_blank">tofstuff.com</a></span>
-    <span style="font-size: 18px;">PROF. : <a href="https://tim-montmorency.com/" target="_blank">tim collège montmorency</a></span>
+    <span style="font-size: 18px;">PROF. : <a href="https://tim-montmorency.com/" target="_blank">tim collège
+        montmorency</a></span>
     <span style="font-size: 18px;">HELP : <a href="https://t-o-f.info/aide" target="_blank">aide</a></span>
     <span style="font-size: 18px;">CV : <a href="cv.pdf" target="_blank">pdf</a></span>
     <span style="font-size: 18px;">CONTACT : <a href="mailto:tof@t-o-f.info">tof@t-o-f.info</a> </span>
 
-    
-</div>
 
-<script type="text/javascript">
+  </div>
+
+  <script type="text/javascript">
     //fitty.observeWindow = true;
     //fitty.observeWindowDelay = 100;
-   fitty('span');
+    fitty('span');
     /*
   var color = randomColor({luminosity: 'dark', count: 1});
   //var container = document.getElementById('wikibody');
@@ -115,10 +121,21 @@ a:hover {
    }
    document.body.style.backgroundColor = randomColor({luminosity: 'light', count: 1});
    */
-</script>
+  </script>
 
-<script>
-     function getRandomColor() {
+  <script>
+    function rotateHue(hslString, degreesToAdd) {
+      const match = hslString.match(/hsl\(\s*(\d+),\s*([\d.]+%)\s*,\s*([\d.]+%)\s*\)/);
+      if (!match) return null;
+
+      let [_, h, s, l] = match;
+      h = (parseInt(h) + degreesToAdd) % 360;
+      if (h < 0) h += 360; // in case of negative values
+
+      return `hsl(${h}, ${s}, ${l})`;
+    }
+
+    function getRandomColor() {
       const h = Math.floor(Math.random() * 360);
       const s = Math.floor(Math.random() * 30) + 70;
       const l = Math.floor(Math.random() * 20) + 40;
@@ -130,11 +147,15 @@ a:hover {
     }
 
     function animateBackground() {
-      document.body.style.backgroundColor = getRandomColor();
+      let c = getRandomColor();
+      document.body.style.backgroundColor = c;
       setTimeout(animateBackground, getRandomDelay(4000, 10000));
+
     }
 
     function animateText() {
+      let c = rotateHue(document.body.style.backgroundColor, 180);
+      document.querySelector('.content').style.color = c;
       document.querySelector('.content').style.color = getRandomColor();
       setTimeout(animateText, getRandomDelay(3000, 8000));
     }
@@ -152,5 +173,6 @@ a:hover {
     animateLinks();
   </script>
 
- </body>
+</body>
+
 </html>
