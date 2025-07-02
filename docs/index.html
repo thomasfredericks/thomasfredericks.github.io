@@ -41,7 +41,7 @@
       align-items: center;
       /* transition: background-color 4s;*/
       /*background: linear-gradient(90deg, #ff0059, #2c14ff, #06ff06);*/
-      background: #ff;
+      background: #ffffff;
       background-size: 300% 300%;
     }
 
@@ -87,15 +87,25 @@
       color: inherit;
     }
 
-    th,
-    td {
-      border: 0px solid #fff;
-    }
+    canvas#bgCanvas {
+      
+position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;   /* Scale to fill screen */
+  height: 100vh;
+  image-rendering: pixelated; /* <-- Force blocky pixels */
+  image-rendering: crisp-edges;
+  z-index: -1;
+  pointer-events: none;
+}
+
   </style>
 
 </head>
 
 <body>
+  <canvas id="bgCanvas"></canvas>
   <div class="content">
 
     <span style="font-size: 72px;color: #000000;">THOMAS O.</span>
@@ -114,142 +124,11 @@
   </div>
 
   <script type="text/javascript">
-    //fitty.observeWindow = true;
-    //fitty.observeWindowDelay = 100;
     fitty('span');
-    /*
-  var color = randomColor({luminosity: 'dark', count: 1});
-  //var container = document.getElementById('wikibody');
-  var links = document.getElementsByTagName("a"); //container.getElementsByTagName("a");
-   for(var i=0;i<links.length;i++)
-   {
-       if(links[i].href)
-       {
-           links[i].style.color = color;
-       }
-   }
-   document.body.style.backgroundColor = randomColor({luminosity: 'light', count: 1});
-   */
   </script>
+    <script src="bgCanvas.js"></script>
 
-  <script>
-    function rotateHue(hslString, degreesToAdd) {
-      const match = hslString.match(/hsl\(\s*(\d+),\s*([\d.]+%)\s*,\s*([\d.]+%)\s*\)/);
-      if (!match) return null;
-
-      let [_, h, s, l] = match;
-      h = (parseInt(h) + degreesToAdd) % 360;
-      if (h < 0) h += 360; // in case of negative values
-
-      return `hsl(${h}, ${s}, ${l})`;
-    }
-
-    function getRandomHslCss() {
-      const c = getRandomHslObject();
-      return hslObjectToCss(c);
-    }
-
-    function hslObjectToCss(c) {
-      return `hsl(${c.h}, ${c.s}%, ${c.l}%)`;
-    }
-
-    function getRandomHslObject() {
-      const h = Math.floor(Math.random() * 360);
-      const s = Math.floor(Math.random() * 30) + 70;
-      const l = Math.floor(Math.random() * 20) + 40;
-
-      return { h: h, s: s, l: l };
-    }
-
-    function getRandomDelay(min = 2000, max = 8000) {
-      return Math.floor(Math.random() * (max - min)) + min;
-    }
-
-    function animateText() {
-      //let c = rotateHue(document.body.style.backgroundColor, 180);
-      //document.querySelector('.content').style.color = c;
-      document.querySelector('.content').style.color = getRandomHslCss();
-      setTimeout(animateText, getRandomDelay(4000, 12000));
-    }
-
-    function animateLinks() {
-      //const c = getRandomColor();
-      document.querySelectorAll('a').forEach(link => {
-        link.style.color = getRandomHslCss(); // c;// 
-      });
-      setTimeout(animateLinks, getRandomDelay(4000, 12000));
-    }
-
-    /*
-    function animateBackground() {
-      
-      document.body.style.backgroundColor = getRandomHslCss ();
-      setTimeout(animateBackground, getRandomDelay(4000, 10000));
-
-    } 
-*/
-
-
-    let positionX = 0;
-    let colorHsLCssArray = [getRandomHslCss(), getRandomHslCss(), getRandomHslCss()];
-
-    function setBackgroundGradient() {
-      colorHsLCssArray[0] = colorHsLCssArray[1];
-      colorHsLCssArray[1] = colorHsLCssArray[2];
-      colorHsLCssArray[2] = getRandomHslCss();
-      // console.log(`linear-gradient(90deg, ${colorHsLCssArray[0]}, ${colorHsLCssArray[1]}, ${colorHsLCssArray[2]})`);
-      document.body.style.background = `
- linear-gradient(90deg, ${colorHsLCssArray[0]}, ${colorHsLCssArray[1]}, ${colorHsLCssArray[2]})
-  0% 0% / 300% 100% 
-  no-repeat
-`;
-    }
-
-    function animateBackground() {
-      // Move background from left to right
-
-      if (positionX >= 75) {
-        setBackgroundGradient();
-        //document.body.style.background = `linear-gradient(90deg, ${colorHsLCssArray[0]}, ${colorHsLCssArray[1]}, ${colorHsLCssArray[2]})`;
-        //document.body.style.backgroundSize = `300% 300%`;
-
-        positionX = 0;
-
-      }
-
-
-
-      document.body.style.backgroundPosition = `${positionX}% 0%`;
-      positionX += 0.1;
-      /*
-      // Handle gradient blending
-      const now = Date.now();
-      blendProgress = (now - lastColorChange) / COLOR_FADE_DURATION;
-
-      if (blendProgress >= 1) {
-        color1 = nextColor1;
-        color2 = nextColor2;
-        nextColor1 = getRandomHslArray();
-        nextColor2 = getRandomHslArray();
-        lastColorChange = now;
-        blendProgress = 0;
-      }
-
-      const blended1 = blendHsl(color1, nextColor1, blendProgress);
-      const blended2 = blendHsl(color2, nextColor2, blendProgress);
-
-      
-*/
-      requestAnimationFrame(animateBackground);
-    }
-
-    // Kick off the animations
-    //setBackgroundGradient();
-
-    //animateBackground();
-    //animateText();
-    //animateLinks();
-  </script>
+  
 
 </body>
 
