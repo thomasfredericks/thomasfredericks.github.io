@@ -16,6 +16,8 @@ window.addEventListener("resize", () => {
 class Shell {
     constructor() {
         this.reset();
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
     }
 
     reset() {
