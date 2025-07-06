@@ -94,10 +94,12 @@ class Shell {
 
 
         ctx.beginPath();
-        // let colorIndex = Math.floor(i / (this.trail.length - 3) * (colors.length - 1));
+        ctx.lineWidth = this.width;
         ctx.strokeStyle = this.shellColor;
         ctx.globalAlpha = this.opacity;
-        ctx.lineWidth = this.width;
+        //ctx.font = "6px Arial";         // Set font size and family
+        //ctx.fillStyle = this.shellColor;       // Set text color
+        //ctx.fillText("Genocide", x1, y1);  // Draw text at x=50, y=100
         ctx.moveTo(x1, y1);
         ctx.lineTo(x2, y2);
         ctx.stroke();
