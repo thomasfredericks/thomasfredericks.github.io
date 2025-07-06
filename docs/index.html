@@ -11,6 +11,19 @@
   <script src="fitty.min.js"></script>
 
   <style>
+    /*
+    #EE2A35 // RED
+    #000000 // BLACK
+    #009736 // GREEN
+    */
+    :root {
+  --text-color: #EE2A35;
+  --title-color: #ffffff;
+  --link-color: #009736;
+  --bg-color : #000000;
+  --hover-blink-duration: 0.3s;
+}
+
     html {
 
       -webkit-background-size: cover;
@@ -31,7 +44,7 @@
       margin: 0;
       padding: 0;
 
-      color: #fcff28;
+      color: var(--text-color);
       /*color: #2f3bf7; blue*/
       /*color: #02ff01; VERT FLUO*/
       /*color: #ff7a18; NICE ORANBGE*/
@@ -41,7 +54,7 @@
       align-items: center;
       /* transition: background-color 4s;*/
       /*background: linear-gradient(90deg, #ff0059, #2c14ff, #06ff06);*/
-      background: #ffffff;
+      background: var(--bg-color);
       background-size: 300% 300%;
     }
 
@@ -54,7 +67,7 @@
       border: 0px solid #000;
       border-radius: 0px;
       transition: color 5s;
-      color: #EE2A35;
+      
     }
 
     .align-left {
@@ -62,7 +75,7 @@
     }
 
     a {
-      color: #009736;
+      color: var(--link-color);
       transition: color 5s;
     }
 
@@ -92,8 +105,8 @@
 position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;   /* Scale to fill screen */
-  height: 100vh;
+  width: 100%;   /* Scale to fill screen */
+  height: 100%;
   image-rendering: pixelated; /* <-- Force blocky pixels */
   image-rendering: crisp-edges;
   z-index: -1;
@@ -108,8 +121,8 @@ position: fixed;
   <canvas id="bgCanvas"></canvas>
   <div class="content">
 
-    <span style="font-size: 72px;color: #000000;">THOMAS O.</span>
-    <span style="font-size: 72px;color: #000000;">FREDERICKS</span>
+    <span style="font-size: 72px;color: var(--title-color);">THOMAS O.</span>
+    <span style="font-size: 72px;color: var(--title-color);">FREDERICKS</span>
     <span style="font-size: 18px;">PORTFOLIO : <a href="portfolio.pdf" target="_blank">pdf</a></span>
     <span style="font-size: 18px;">CODE : <a href="https://github.com/thomasfredericks" target="_blank">github</a> <a
         href="https://codeberg.org/thomasofredericks" target="_blank">codeberg</a></span>
